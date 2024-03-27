@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 
-require "brazil-cep"
+# enable code coverage report
+require "simplecov"
+SimpleCov.start if ENV.fetch("COVERAGE", "false") == "true"
 
+require "brazil-cep"
 Dir["../lib/**/*.rb"].sort.each { |f| require f }
 
 RSpec.configure do |config|
