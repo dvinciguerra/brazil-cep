@@ -4,6 +4,7 @@ module Brazil
   module Cep
     # Adapters class namespace
     module Adapters
+      # autoload default adapters
       autoload :Base, "brazil_cep/adapters/base"
       autoload :Viacep, "brazil_cep/adapters/viacep"
       autoload :Postmon, "brazil_cep/adapters/postmon"
@@ -14,8 +15,19 @@ module Brazil
         viacep: Viacep,
         postmon: Postmon,
         republica_virtual: RepublicaVirtual
-      }.freeze
+      }
 
+      private_constant :PROVIDERS
+
+      # get providers
+      # @return [Hash] providers
+      def self.providers
+        PROVIDERS
+      end
+
+      # get provider instance
+      # @param provider [Symbol] provider key
+      # @return [Base] provider instance
       def self.get(provider = :viacep)
         PROVIDERS[provider].new
       end
