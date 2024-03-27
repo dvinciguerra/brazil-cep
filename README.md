@@ -1,5 +1,7 @@
 # Brazil::Cep
 
+[![Gem Version](https://badge.fury.io/rb/brazil-cep.svg)](https://badge.fury.io/rb/brazil-cep)
+
 This gem provides a simple way to validate and format Brazilian postal codes (CEP).
 
 ## Installation
