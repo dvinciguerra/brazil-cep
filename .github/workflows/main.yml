@@ -49,4 +49,5 @@ jobs:
         CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
       run: |
         export GIT_BRANCH="${GITHUB_REF/refs\/heads\//}"
-        ./cc-test-reporter after-build -r ${CC_TEST_REPORTER_ID}
+        cp coverage/lcov/brazil-cep.lcov coverage/lcov.info
+        ./cc-test-reporter after-build -r ${CC_TEST_REPORTER_ID} -t lcov -d
