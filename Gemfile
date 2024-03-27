@@ -11,4 +11,7 @@ gem "rspec", "~> 3.0"
 
 gem "rubocop", "~> 1.21"
 
-gem "simplecov", "~> 0.21"
+group :test, :development do
+  gem "simplecov", "~> 0.21"
+  gem "simplecov-lcov"
+end

@@ -1,8 +1,18 @@
 # frozen_string_literal: true
 
 # enable code coverage report
-require "simplecov"
-SimpleCov.start if ENV.fetch("COVERAGE", "false") == "true"
+if ENV.fetch("COVERAGE", "false") == "true"
+  require "simplecov"
+
+  if ENV["CI"]
+    require "simplecov-lcov"
+
+    SimpleCov::Formatter::LcovFormatter.config.report_with_single_file = true
+    SimpleCov.formatter = SimpleCov::Formatter::LcovFormatter
+  end
+
+  SimpleCov.start
+end
 
 require "brazil-cep"
 Dir["../lib/**/*.rb"].sort.each { |f| require f }
