@@ -4,10 +4,10 @@ module Brazil
   module Cep
     # Address class
     class Address
-      attr_reader :cep, :state, :city, :neighborhood, :street, :complement, :meta
+      attr_reader :zipcode, :state, :city, :neighborhood, :street, :complement, :meta
 
       def initialize(**arguments)
-        @cep = arguments[:cep]
+        @zipcode = arguments[:zipcode]
         @state = arguments[:state]
         @city = arguments[:city]
         @neighborhood = arguments[:neighborhood]

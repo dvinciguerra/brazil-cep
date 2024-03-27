@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "spec_helper"
 
 RSpec.describe Brazil::Cep::Address do
@@ -5,7 +7,7 @@ RSpec.describe Brazil::Cep::Address do
 
   let(:address_params) do
     {
-      cep: "01311-100",
+      zipcode: "01311-100",
       street: "Avenida Paulista",
       state: "SP",
       city: "São Paulo",
@@ -27,7 +29,7 @@ RSpec.describe Brazil::Cep::Address do
     }
   end
 
-  it { expect(address.cep).to eq("01311-100") }
+  it { expect(address.zipcode).to eq("01311-100") }
   it { expect(address.street).to eq("Avenida Paulista") }
   it { expect(address.state).to eq("SP") }
   it { expect(address.city).to eq("São Paulo") }

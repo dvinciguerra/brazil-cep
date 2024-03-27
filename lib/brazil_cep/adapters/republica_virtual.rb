@@ -12,7 +12,7 @@ module Brazil
 
         def transformation!
           address_params = {
-            cep: @cep,
+            zipcode: @cep,
             state: @payload[:uf],
             city: @payload[:cidade],
             neighborhood: @payload[:bairro],
