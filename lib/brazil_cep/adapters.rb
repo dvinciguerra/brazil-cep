@@ -25,6 +25,17 @@ module Brazil
         PROVIDERS
       end
 
+      # register a provider
+      #
+      # @example
+      #   Brazil::Cep::Adapters.register(:custom_provider, Brazil::Cep::Adapters::CustomProvider)
+      #
+      # @param provider_key [Symbol] provider key
+      # @param provider_class [Class] provider class
+      def self.register(provider_key, provider_class)
+        PROVIDERS[provider_key] = provider_class
+      end
+
       # get provider instance
       # @param provider [Symbol] provider key
       # @return [Base] provider instance
