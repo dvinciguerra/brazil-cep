@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-require_relative "lib/brazil_cep/version"
+$LOAD_PATH.unshift File.expand_path("./lib", __dir__)
+
+require "brazil-cep"
 
 Gem::Specification.new do |spec|
   spec.name = "brazil-cep"
@@ -14,7 +16,7 @@ Gem::Specification.new do |spec|
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.7.0"
 
-  # spec.metadata["allowed_push_host"] = "TODO: Set to your gem server 'https://example.com'"
+  spec.metadata["rubygems_mfa_required"] = "true"
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = spec.homepage
