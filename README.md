@@ -1,6 +1,7 @@
 # Brazil::Cep
 
 [![Gem Version](https://badge.fury.io/rb/brazil-cep.svg)](https://badge.fury.io/rb/brazil-cep)
+[![Ruby](https://github.com/dvinciguerra/brazil-cep/actions/workflows/main.yml/badge.svg)](https://github.com/dvinciguerra/brazil-cep/actions/workflows/main.yml)
 [![Maintainability](https://api.codeclimate.com/v1/badges/ebe40dff21c15748fd1c/maintainability)](https://codeclimate.com/github/dvinciguerra/brazil-cep/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/ebe40dff21c15748fd1c/test_coverage)](https://codeclimate.com/github/dvinciguerra/brazil-cep/test_coverage)
 
