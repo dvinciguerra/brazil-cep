@@ -31,7 +31,8 @@ module Brazil
           @cep = value unless value.nil?
 
           http_request(provider_url) do |http_response|
-            raise Brazil::Cep::RequestError, http_response unless http_response.is_a?(Net::HTTPSuccess)
+            raise Brazil::Cep::ZipcodeNotFound, http_response if http_response.is_a?(Net::HTTPNotFound)
+            raise Brazil::Cep::RequestError, http_response if http_response.code.to_i >= 400
           end
 
           deserialization!
