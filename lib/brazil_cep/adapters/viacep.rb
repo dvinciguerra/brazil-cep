@@ -18,7 +18,7 @@ module Brazil
             neighborhood: @payload[:bairro],
             street: @payload[:logradouro],
             complement: @payload[:complemento],
-            meta: @payload.update(provider: :postmon)
+            meta: @payload.update(provider: :viacep)
           }
 
           Brazil::Cep::Address.new(**address_params)
