@@ -8,8 +8,24 @@ module Brazil
   # Brazil::Cep providers a simple way to fetch address information from a Brazilian CEP
   # @public
   module Cep
+    # generic error class
     class Error < StandardError; end
-    class RequestError < Error; end
+
+    # request error class
+    class RequestError < Error
+      attr_reader :status, :code, :response
+
+      def initialize(response)
+        @response = response
+        @status = response.message || "Undefined"
+        @code = response.code.to_i
+
+        super("Request Error: #{code} #{status} - #{response.body[0..1000].inspect}")
+      end
+    end
+
+    # zipcode not found error class
+    class ZipcodeNotFound < RequestError; end
 
     # fetch address information from a Brazilian CEP
     # @param [String] cep the CEP to fetch
