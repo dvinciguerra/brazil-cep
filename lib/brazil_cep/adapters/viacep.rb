@@ -11,6 +11,8 @@ module Brazil
         private
 
         def transformation!
+          raise Brazil::Cep::ZipcodeNotFound, @response if @payload[:erro] == true
+
           address_params = {
             zipcode: @payload[:cep],
             state: @payload[:uf],
