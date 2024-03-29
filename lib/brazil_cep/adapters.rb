@@ -10,13 +10,15 @@ module Brazil
       autoload :Postmon, "brazil_cep/adapters/postmon"
       autoload :RepublicaVirtual, "brazil_cep/adapters/republica_virtual"
       autoload :CorreiosWeb, "brazil_cep/adapters/correios_web"
+      autoload :CepAberto, "brazil_cep/adapters/cep_aberto"
 
       # list of provider keys and classes
       PROVIDERS = {
         viacep: Viacep,
         postmon: Postmon,
         republica_virtual: RepublicaVirtual,
-        correios_web: CorreiosWeb
+        correios_web: CorreiosWeb,
+        cep_aberto: CepAberto
       }
 
       private_constant :PROVIDERS
