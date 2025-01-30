@@ -3,6 +3,7 @@
 require_relative "brazil_cep/version"
 require_relative "brazil_cep/address"
 require_relative "brazil_cep/adapters"
+require_relative "brazil_cep/validation"
 
 module Brazil
   # Brazil::Cep providers a simple way to fetch address information from a Brazilian CEP
@@ -26,6 +27,8 @@ module Brazil
 
     # zipcode not found error class
     class ZipcodeNotFound < RequestError; end
+
+    include Validation
 
     # fetch address information from a Brazilian CEP
     # @param [String] cep the CEP to fetch
