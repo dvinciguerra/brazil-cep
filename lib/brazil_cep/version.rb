@@ -2,6 +2,7 @@
 
 module Brazil
   module Cep
-    VERSION = "0.5.0"
+    # gem version
+    VERSION = "0.6.0"
   end
 end
